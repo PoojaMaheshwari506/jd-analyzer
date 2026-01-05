@@ -28,7 +28,7 @@ if st.button("Analyze JD"):
                 # -------- CASE 1: File uploaded --------
                 if uploaded_file is not None:
                     response = requests.post(
-                        "https://jd-analyzer-pfb3.onrender.com-file",
+                        "https://jd-analyzer-pfb3.onrender.com/analyze-file",
                         files={"file": uploaded_file},
                         timeout=60
                     )
@@ -36,7 +36,7 @@ if st.button("Analyze JD"):
                 # -------- CASE 2: Text pasted --------
                 else:
                     response = requests.post(
-                        "https://jd-analyzer-pfb3.onrender.com",
+                        "https://jd-analyzer-pfb3.onrender.com/analyze",
                         json={"jd_text": jd_text},
                         timeout=30
                     )
